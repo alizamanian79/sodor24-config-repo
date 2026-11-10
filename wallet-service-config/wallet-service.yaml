@@ -11,7 +11,6 @@ application:
     payments:
       zarinpal:
         name: zarinpal
-        merchant_id: ${ZARINPAL_MERCHANT_ID:d8234a3a-dbcf-4f30-ab52-b195b0f0f1a3}
 
     rabbitmq:
       exchange: wallet.exchange
