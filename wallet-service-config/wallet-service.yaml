@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: wallet-service
+
+server:
+  port: 8489
+
+application:
+  wallet-service:
+    currency: ${CURRENCY:IRT}
+    payments:
+      zarinpal:
+        name: zarinpal
+        merchant_id: ${ZARINPAL_MERCHANT_ID:d8234a3a-dbcf-4f30-ab52-b195b0f0f1a3}
+
+    rabbitmq:
+      exchange: wallet.exchange
+      queue:
+        list-wallet: wallet.list.queue
+        create-wallet: wallet.create.queue
+        get-wallet: wallet.get.queue
+        active-wallet: wallet.active.queue
+        delete-wallet: wallet.delete.queue
+        update-sub-wallet: wallet.update.sub.queue
+        payment-request-wallet: wallet.request.payment.queue
+        payment-verifier-wallet: wallet.verifier.payment.queue
+        transaction-list: transaction.list.queue
+        get-transaction-by-slug: get.transaction.by.slug.queue
+        get-transaction-in-date: get.transaction.in.date.queue
+        delete-transaction-by-slug: delete.transaction.by.slug.queue
+        financial-fund: financial.fund.queue
+
+      routing:
+        list-wallet: wallet.list.routing-key
+        create-wallet: wallet.create.routing-key
+        get-wallet: wallet.get.routing-key
+        active-wallet: wallet.active.routing-key
+        delete-wallet: wallet.delete.routing-key
+        update-sub-wallet: wallet.update.sub.routing-key
+        payment-request-wallet: wallet.request.payment.routing-key
+        payment-verifier-wallet: wallet.verifier.payment.routing-key
+        transaction-list: transaction.list.routing-key
+        get-transaction-by-slug: get.transaction.by.slug.routing-key
+        get-transaction-in-date: get.transaction.in.date.routing-key
+        delete-transaction-by-slug: delete.transaction.by.slug.routing-key
+        financial-fund: financial.fund.routing-key
