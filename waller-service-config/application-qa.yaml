@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: ${DB_RESOURCE:jdbc:mysql://3kepe7.h.filess.io:3306/defaultdb_rightbound?createDatabaseIfNotExist=true}
+    username: ${DB_USER:defaultdb_rightbound}
+    password: ${DB_PASSWORD:2f9f246fc9934e2ea660717a5a1f88c15aee0218}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  rabbitmq:
+    host: ${SPRING_RABBITMQ_HOST:fuji.lmq.cloudamqp.com}
+    port: ${SPRING_RABBITMQ_PORT:5671}
+    username: ${SPRING_RABBITMQ_USERNAME:yxuffcls}
+    password: ${SPRING_RABBITMQ_PASSWORD:BzH-4VfpTqPAkO0sAaqnFRgQv6EFYFdX}
+    virtual-host: ${SPRING_RABBITMQ_VIRTUAL_HOST:yxuffcls}
+    ssl:
+      enabled: true
+    connection-timeout: 10000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+application:
+  wallet-service:
+    currency: ${CURRENCY:IRT}
+    payments:
+      zarinpal:
+        merchant_id: ${ZARINPAL_MERCHANT_ID:d8234a3a-dbcf-4f30-ab52-b195b0f0f1a3}
