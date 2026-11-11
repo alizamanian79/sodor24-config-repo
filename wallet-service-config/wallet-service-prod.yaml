@@ -21,4 +21,4 @@ application:
     currency: ${CURRENCY:IRT}
     payments:
       zarinpal:
-        merchant_id: ${ZARINPAL_MERCHANT_ID:no merchantId set yet}
+        merchant_id: ${ZARINPAL_MERCHANT_ID:no merchantId}
