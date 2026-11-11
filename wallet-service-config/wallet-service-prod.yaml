@@ -1,4 +1,8 @@
 spring:
+  
+  config:
+    import: "optional:configserver:${SPRING_CONFIG_CLIENT_HOST:http://localhost:8888}"
+    
   datasource:
     url: ${DB_RESOURCE:jdbc:mysql://localhost:3306/sodor24db?createDatabaseIfNotExist=true}
     username: ${DB_USER:root}
@@ -21,4 +25,4 @@ application:
     currency: ${CURRENCY:IRT}
     payments:
       zarinpal:
-        merchant_id: ${ZARINPAL_MERCHANT_ID:no merchantId}
+        merchant_id: ${ZARINPAL_MERCHANT_ID:d8234a3a-dbcf-4f30-ab52-b195b0f0f1a3}
