@@ -1,16 +1,21 @@
 spring:
+
+  profiles:
+    active: ${SPRING_PROFILE_ACTIVE:dev}
+
   application:
     name: wallet-service
+
 
 server:
   port: 8489
 
 application:
   wallet-service:
-    currency: ${CURRENCY:IRT}
     payments:
       zarinpal:
         name: zarinpal
+        # merchant_id: ${ZARINPAL_MERCHANT_ID:d8234a3a-dbcf-4f30-ab52-b195b0f0f1a3}
 
     rabbitmq:
       exchange: wallet.exchange
@@ -43,3 +48,10 @@ application:
         get-transaction-in-date: get.transaction.in.date.routing-key
         delete-transaction-by-slug: delete.transaction.by.slug.routing-key
         financial-fund: financial.fund.routing-key
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,refresh
