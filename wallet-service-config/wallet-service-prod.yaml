@@ -23,3 +23,6 @@ application:
     payments:
       zarinpal:
         merchant_id: ${ZARINPAL_MERCHANT_ID:not set yet}
+        
+MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:1234}
+MYSQL_DATABASE: ${MYSQL_DATABASE:walletdb}
