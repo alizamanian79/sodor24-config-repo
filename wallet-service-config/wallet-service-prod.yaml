@@ -1,25 +1,25 @@
 spring:
-
   datasource:
-    url: ${DB_RESOURCE:jdbc:mysql://localhost:3306/walletdb?createDatabaseIfNotExist=true}
+    url: ${DB_RESOURCE:jdbc:mysql://sodor24db-wallets:3306/walletdb?createDatabaseIfNotExist=true}
     username: ${DB_USER:root}
     password: ${DB_PASSWORD:1234}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   rabbitmq:
-    host: ${SPRING_RABBITMQ_HOST:localhost}
+    host: ${SPRING_RABBITMQ_HOST:rabbitmq-service}
     port: ${SPRING_RABBITMQ_PORT:5672}
     username: ${SPRING_RABBITMQ_USERNAME:guest}
     password: ${SPRING_RABBITMQ_PASSWORD:guest}
+    virtual-host: ${SPRING_RABBITMQ_VIRTUAL_HOST:/}
 
   jpa:
     hibernate:
-      ddl-auto: update
-    show-sql: true
+      ddl-auto: ${JPA_DDL_AUTO:update}
+    show-sql: ${JPA_SHOW_SQL:false}
 
 application:
   wallet-service:
     currency: ${CURRENCY:IRT}
     payments:
       zarinpal:
-        merchant_id: ${ZARINPAL_MERCHANT_ID:d8234a3a-dbcf-4f30-ab52-b195b0f0f1a3ss}
+        merchant_id: ${ZARINPAL_MERCHANT_ID}
