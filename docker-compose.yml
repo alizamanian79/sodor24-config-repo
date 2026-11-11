@@ -1,0 +1,11 @@
+
+services:
+
+  config-server:
+    image: alizamanian/config-server-service:latest
+    container_name: config-server
+    env_file:
+      - .env
+    ports:
+      - "8888:8888"
+    restart: unless-stopped
