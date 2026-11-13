@@ -1,8 +1,5 @@
 spring:
 
-  config:
-    import: optional:configserver:${SPRING_CONFIG_CLIENT_HOST:https://config-server-service-tj06.onrender.com}
-
   datasource:
     url: ${DB_RESOURCE:jdbc:mysql://3kepe7.h.filess.io:3306/defaultdb_rightbound?createDatabaseIfNotExist=true}
     username: ${DB_USER:defaultdb_rightbound}
