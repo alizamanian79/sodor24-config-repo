@@ -1,7 +1,15 @@
 spring:
 
+  profiles:
+    active: ${SPRING_PROFILE_ACTIVE:dev}
+
   application:
     name: wallet-service
+
+    
+  config:
+    import: optional:configserver:${SPRING_CONFIG_CLIENT_HOST:http://localhost:8888}
+    
 
 server:
   port: 8489
