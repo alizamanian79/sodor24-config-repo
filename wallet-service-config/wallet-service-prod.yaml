@@ -1,4 +1,5 @@
 spring:
+
   datasource:
     url: ${DB_RESOURCE:jdbc:mysql://sodor24db-wallets:3306/walletdb?createDatabaseIfNotExist=true}
     username: ${DB_USER:root}
